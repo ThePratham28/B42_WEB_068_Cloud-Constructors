@@ -1,0 +1,418 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /*.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.2rem 0.2rem;
+    transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+    z-index: 1000;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar.scrolled {
+    background: rgba(34, 34, 34, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 0.75rem 0.2rem;
+}*/
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.2rem 0.2rem;
+    transition: background 0.4s ease-in-out, padding 0.3s ease-in-out;
+    z-index: 1000;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar when scrolled */
+.navbar.scrolled {
+    background: rgba(34, 34, 34, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 0.2rem;
+}
+.logo {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem; /* Adjust padding as needed */
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        font-size: 1.5rem;
+        padding: 0.5rem; /* Adjust padding for smaller screens */
+    }
+}
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #007bff;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 40px; /* Adjust this value to shift it left */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1500; /* Ensures it stays above other elements */
+    padding: 20px;  /*Adds some space around it */
+}
+
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Active Hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(34, 34, 34, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 1.5rem 0;
+        text-align: center;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+        right: 40px
+    }
+}
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: white;
+    margin-top: auto;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    color: #007bff;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    transform: scale(1.05);
+    background: #0056b3;
+    color: white;
+  }
+  
+  /* Event Highlights */
+  .event-highlights {
+    text-align: center;
+    padding: 3rem;
+    background: #eef;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Card Design */
+  .card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .features {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  
+  @media (max-width: 480px) {
+    .hero {
+      padding: 3rem 1rem;
+    }
+    .hero h1 {
+      font-size: 1.8rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+    }
+  }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url("./assets/Event-Management-HomePage.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
+    animation: slideUp 1.5s ease-in-out;
+    position: relative;
+    top: -120px; /* Moves the overlay slightly up */
+  }
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    background-attachment: scroll;
+  }
+}
+
+/* Smooth and centered card scrolling with refined animations */
+
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+    color: #333;
+    position: relative;
+    margin-bottom: 2rem;
+    background: none;
+}
+
+.features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem 0;
+}
+
+.feature-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 90%;
+    justify-content: center;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+}
+
+.feature-cards::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15), 0 -5px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    min-width: 300px;
+    max-width: 340px;
+    margin: 0 10px;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    scroll-snap-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), 0 -5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.carousel-btn {
+    background: rgba(0, 0, 0, 0.15);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #444;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .features {
+        padding: 2rem 1rem;
+    }
+    .features h2 {
+        font-size: 2rem;
+    }
+    .feature-cards {
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .carousel-btn {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}

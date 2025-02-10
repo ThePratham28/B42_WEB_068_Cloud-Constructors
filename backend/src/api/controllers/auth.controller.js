@@ -11,8 +11,7 @@ export const signupUser = async (req, res) => {
     try {
         const userExists = await User.findOne({ email });
         if (userExists)
-            return res.status(400).json({ message: "User already exists" 
-        });
+            return res.status(400).json({ message: "User already exists" });
 
         const user = await User.create({ name, email, password });
         res.json({
@@ -29,18 +28,19 @@ export const loginUser = async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ email });
-        if (!user) return res.status(400).json({ message: "Invalid credentials" });
+        if (!user)
+            return res.status(400).json({ message: "Invalid credentials" });
 
         const isMatch = await compare(password, user.password);
 
-        if (!isMatch) return res.status(400).json({ message: "Invalid credentials" });
+        if (!isMatch)
+            return res.status(400).json({ message: "Invalid credentials" });
 
         res.json({
             token: generateToken(user._id),
             userId: user._id,
             name: user.name,
         });
-
     } catch (error) {
         res.status(500).json({ message: "Server error" });
     }
@@ -48,6 +48,11 @@ export const loginUser = async (req, res) => {
 
 export const getUserProfile = async (req, res) => {
     try {
+        if (!req.user) {
+            console.log(req.user);
+            return res.status(401).json({ message: "Invalid Token" });
+        }
+        console.log(req.user);
         const user = await User.findById(req.user.id).select("-password");
         res.json(user);
     } catch (error) {

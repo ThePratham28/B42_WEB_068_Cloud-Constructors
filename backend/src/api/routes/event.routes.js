@@ -6,7 +6,7 @@ import { createEvent, getAllEvents, getEventById } from "../controllers/event.co
 const eventRouter = express.Router();
 
 
-eventRouter.post("/", authMiddleware, createEvent);
+eventRouter.post("/", createEvent);
 eventRouter.get("/", getAllEvents); 
 eventRouter.get("/:id", getEventById);  
 

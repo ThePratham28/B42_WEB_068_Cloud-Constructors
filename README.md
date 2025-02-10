@@ -1,5 +1,7 @@
 # B42_WEB_068_Cloud-Constructors - **Revamped Event Management Platform**  
 
+![Eventify](Eventify.png)
+
 ## **Introduction**  
 The **Revamped Event Management Platform** is a **full-stack web application** that allows users to **create, manage, and attend events** effortlessly. Users can:  
 - Create events with **date, time, location, and media uploads**  
